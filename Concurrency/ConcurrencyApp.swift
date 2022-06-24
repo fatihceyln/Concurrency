@@ -11,7 +11,7 @@ import SwiftUI
 struct ConcurrencyApp: App {
     var body: some Scene {
         WindowGroup {
-            CheckedContinuationBootcamp()
+            SomeHomeView()
         }
     }
 }
