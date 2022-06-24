@@ -29,18 +29,25 @@ struct AsyncLetBootcamp: View {
         .onAppear {
             Task {
                 do {
+                    
+                    // Purpose of "async let" is making async work without awaiting the others to complete their job
+                    
                     async let fetchImage1 = fetchImage()
                     async let fetchImage2 = fetchImage()
                     async let fetchImage3 = fetchImage()
                     async let fetchImage4 = fetchImage()
-                    
-                    // It'll wait for four fetchImage async function
+
+                    // It'll wait for four fetchImage async function and then assign results of them
                     let (image1, image2, image3, image4) = try await (fetchImage1, fetchImage2, fetchImage3, fetchImage4)
-                    
+
+                    // You can make try? or try specific to function if you want
 //                    let (image1, image2, image3, image4) = try await (try? fetchImage1, try? fetchImage2, try fetchImage3, try fetchImage4)
-                    
+
                     images.append(contentsOf: [image1, image2, image3, image4])
+
                     
+                    // It'll await for all awaitened results in order
+                    // So the images pop up in order
 //                    let image1 = try await fetchImage()
 //                    images.append(image1)
 //

@@ -109,7 +109,6 @@ class DownloadImageAsyncViewModel: ObservableObject {
 //        DispatchQueue.main.async {
 //            self.image = image
 //        }
-
         await MainActor.run {
             self.image = image
         }
