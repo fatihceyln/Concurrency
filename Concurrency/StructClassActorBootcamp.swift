@@ -50,9 +50,7 @@
  
  Structs -> Data Models, Views
  Classes -> View Models
- Actors -> Shared 'Manager' and 'Data Store'
- 
- 
+ Actors -> Shared ('Manager' and 'Data Store')
  
 */
 

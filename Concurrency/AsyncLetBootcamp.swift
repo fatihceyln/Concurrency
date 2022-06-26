@@ -47,7 +47,7 @@ struct AsyncLetBootcamp: View {
 
                     
                     // It'll await for all awaitened results in order
-                    // So the images pop up in order
+                    // So the images will pop up in order
 //                    let image1 = try await fetchImage()
 //                    images.append(image1)
 //

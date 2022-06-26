@@ -81,9 +81,10 @@ class DoCatchTryThrowsBootcampViewModel: ObservableObject {
         }
     }
     
+    // If we didn't make manager.getText3() try?, we would immediately go to catch block because it throws an error. Thus we wouldn't reach manager.getText4().
     func fetchText4() {
         do {
-            let newText = try? manager.getText3()
+            let newText = try? manager.getText3() // -> It'll throw an error
             if let newText = newText {
                 self.text = newText
             }
