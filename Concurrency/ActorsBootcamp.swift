@@ -8,37 +8,37 @@
 import SwiftUI
 
 /*
- class MyDataManager {
- static let shared: MyDataManager = MyDataManager()
- private init() {}
+class MyDataManager {
+    static let shared: MyDataManager = MyDataManager()
+    private init() {}
  
- var data: [String] = []
+    var data: [String] = []
  
- func getRandomData() -> String? {
- self.data.append(UUID().uuidString)
- print(Thread.current)
- return data.randomElement()
- }
- }
+    func getRandomData() -> String? {
+        self.data.append(UUID().uuidString)
+        print(Thread.current)
+        return data.randomElement()
+    }
+}
  */
 
 /*
- class MyDataManager {
- static let shared: MyDataManager = MyDataManager()
- private init() {}
- 
- var data: [String] = []
- private let queue: DispatchQueue = DispatchQueue(label: "com.fatih.MyDataManager")
- 
- func getRandomData(completionHandler: @escaping (String?) -> ()) {
- queue.async {
- self.data.append(UUID().uuidString)
- print(Thread.current)
- completionHandler(self.data.randomElement())
- }
- }
- }
- */
+class MyDataManager {
+    static let shared: MyDataManager = MyDataManager()
+    private init() {}
+    
+    var data: [String] = []
+    private let queue: DispatchQueue = DispatchQueue(label: "com.fatih.MyDataManager")
+    
+    func getRandomData(completionHandler: @escaping (String?) -> ()) {
+        queue.async {
+            self.data.append(UUID().uuidString)
+            print(Thread.current)
+            completionHandler(self.data.randomElement())
+        }
+    }
+}
+*/
 
 actor MyDataManager {
     static let shared: MyDataManager = MyDataManager()
@@ -54,21 +54,21 @@ actor MyDataManager {
     }
     
     /*
-        NOTE:
-        You can't access the isolated function from the non-isolated function
-        But you can reach with Task
-    */
+     NOTE:
+     You can't access the isolated function from the non-isolated function
+     But you can reach within Task
+     */
     
     // We don't want to wait to get this function
     nonisolated func getSavedData() -> String {
-        // let data = getRandomData()
+        // let data = getRandomData() ---> It doesn't work
         
         /*
-        Task {
-            let data = await getRandomData()
-            print("data")
-        }
-        */
+         Task {
+         let data = await getRandomData()
+         print("data")
+         }
+         */
         
         return "New Data"
     }

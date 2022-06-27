@@ -37,7 +37,7 @@ class DownloadImageAsyncImageLoader {
     func downloadWithCombine() -> AnyPublisher<UIImage?, Error> {
         URLSession.shared.dataTaskPublisher(for: url)
             .subscribe(on: DispatchQueue.global(qos: .background))
-            .map { (data: Data, response: URLResponse) in
+            .map { (data: Data, response: URLResponse) -> UIImage? in
                 self.handleResponse(data: data, response: response)
             }
             .mapError({ $0 })

@@ -115,7 +115,7 @@ extension StructClassActorBootcamp {
         let objectB = objectA
         print("ObjectB: ", objectB.title)
         
-        // when we are changing the title here we are not changing the object itself (bacuse of that objectB is let) but we are changing the title inside the object
+        // when we are changing the title here, we are not changing the object itself (bacuse of that objectB is let) but we are changing the title inside the object
         objectB.title = "Second title"
         print("ObjectB title changed")
         
@@ -125,7 +125,7 @@ extension StructClassActorBootcamp {
     
     private func actorTest1() /* async */ {
         print("actorTest1")
-        // It has to be in async environemnt. You can wrap within Task or you can make your class async
+        // It has to be in async environemnt. You can wrap within Task or you can make your func async
         Task {
             let objectA = MyActor(title: "Starting title")
             await print("ObjectA: ", objectA.title)
@@ -134,7 +134,7 @@ extension StructClassActorBootcamp {
             let objectB = objectA
             await print("ObjectB: ", objectB.title)
             
-            // when we are changing the title here we are not changing the object itself (bacuse of that objectB is let) but we are changing the title inside the object
+            // when we are changing the title here, we are not changing the object itself (bacuse of that objectB is let) but we are changing the title inside the object
             //objectB.title = "Second title" -> Cannot change title like that in actor because actor is thread safe, you must to do it within the actor
             await objectB.updateTitle(title: "Second title")
             print("ObjectB title changed")
@@ -157,7 +157,7 @@ struct MyStruct {
 struct CustomStruct {
     let title: String
     
-    // we are creating totaly new sturct same as below
+    // we are creating totaly new struct
     func updateTitle(title: String) -> CustomStruct {
         CustomStruct(title: title)
     }
