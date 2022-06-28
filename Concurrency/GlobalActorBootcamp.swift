@@ -18,18 +18,31 @@ actor MyNewDataManager {
     }
 }
 
+// @MainActor
 class GlobalActorBootcampViewModel: ObservableObject {
     
     @MainActor @Published var dataArray: [String] = []
     // let manager: MyNewDataManager = MyNewDataManager()
     let manager: MyNewDataManager = MyFirstGlobalActor.shared
     
-    @MyFirstGlobalActor func getData() async {
+    func getData() async {
         let data = await manager.getDataFromDatabase()
         
         await MainActor.run(body: {
             self.dataArray = data
         })
+    }
+    
+    @MyFirstGlobalActor func getData2() {
+//        DispatchQueue.main.async {
+//            self.dataArray = ["1", "2", "3"]
+//        }
+        
+        Task {
+            await MainActor.run(body: {
+                self.dataArray = ["1", "2"]
+            })
+        }
     }
 }
 
@@ -42,7 +55,9 @@ struct GlobalActorBootcamp: View {
             }
         }
         .task {
-            await viewModel.getData()
+            //await viewModel.getData()
+            
+            await viewModel.getData2()
         }
     }
 }
