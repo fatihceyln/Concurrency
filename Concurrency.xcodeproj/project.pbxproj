@@ -22,6 +22,7 @@
 		3D7FF8E228658D1900155195 /* TaskGroupBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7FF8E128658D1900155195 /* TaskGroupBootcamp.swift */; };
 		3DDA97722867180C0055EFF3 /* StructClassActorBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDA97712867180C0055EFF3 /* StructClassActorBootcamp.swift */; };
 		3DF9E989286ADE780050738A /* SendableBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF9E988286ADE780050738A /* SendableBootcamp.swift */; };
+		3DF9E98B286AF05B0050738A /* AsyncPublisherBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF9E98A286AF05B0050738A /* AsyncPublisherBootcamp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		3D7FF8E128658D1900155195 /* TaskGroupBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskGroupBootcamp.swift; sourceTree = "<group>"; };
 		3DDA97712867180C0055EFF3 /* StructClassActorBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructClassActorBootcamp.swift; sourceTree = "<group>"; };
 		3DF9E988286ADE780050738A /* SendableBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendableBootcamp.swift; sourceTree = "<group>"; };
+		3DF9E98A286AF05B0050738A /* AsyncPublisherBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncPublisherBootcamp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				3D7F9C36286863CE00A7F685 /* ActorsBootcamp.swift */,
 				3D4CDABA286A406100FDAACA /* GlobalActorBootcamp.swift */,
 				3DF9E988286ADE780050738A /* SendableBootcamp.swift */,
+				3DF9E98A286AF05B0050738A /* AsyncPublisherBootcamp.swift */,
 				3D7FF8CD2864C39500155195 /* Assets.xcassets */,
 				3D7FF8CF2864C39500155195 /* Preview Content */,
 			);
@@ -177,6 +180,7 @@
 				3D43AF2A2865DB190031A373 /* SomeView.swift in Sources */,
 				3D7FF8DC2864EA0F00155195 /* AsyncAwaitBootcamp.swift in Sources */,
 				3D7FF8CA2864C39400155195 /* ConcurrencyApp.swift in Sources */,
+				3DF9E98B286AF05B0050738A /* AsyncPublisherBootcamp.swift in Sources */,
 				3DDA97722867180C0055EFF3 /* StructClassActorBootcamp.swift in Sources */,
 				3D4CDABB286A406100FDAACA /* GlobalActorBootcamp.swift in Sources */,
 				3D7F9C37286863CE00A7F685 /* ActorsBootcamp.swift in Sources */,
